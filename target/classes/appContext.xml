@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="studentid1" scope="prototype" class="com.mycode.beans.Student">
+		<property name="rollNum" value="1"></property>
+		<property name="name" value="Prasad"></property>
+		<property name="address" ref="addressid1"></property>
+	</bean>
+
+	<bean id="addressid1" class="com.mycode.beans.Address">
+		<property name="doorNum" value="6454"></property>
+		<property name="city" value="Bangalore"></property>
+	</bean>
+	
+	<bean id="studentid2" class="com.mycode.beans.Student">
+		<constructor-arg name="rollNum" index="0" value="2"></constructor-arg>
+		<constructor-arg name="name" index="1" value="Suresh"></constructor-arg>
+		<constructor-arg name="address" index="2" ref="addressid2"></constructor-arg>
+	</bean>
+	
+	<bean id="addressid2" class="com.mycode.beans.Address">
+		<constructor-arg name="doorNum" index="0" value="9989"></constructor-arg>
+		<constructor-arg name="city" index="1" value="Hyderabad"></constructor-arg>
+	</bean>
+</beans>
